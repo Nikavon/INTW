@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currículo - Anna Queiroz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -22,7 +23,7 @@
         }
         .foto-perfil {
             width: 150px;
-            height: 200px; /* Proporção 3:4 */
+            height: 200px;
             object-fit: cover;
             border-radius: 8px;
             border: 2px solid #ccc;
@@ -42,6 +43,28 @@
             font-size: 0.9em;
             color: #555;
         }
+        
+        .social-buttons {
+            margin: 15px 0;
+        }
+        .social-buttons a {
+            display: inline-block;
+            margin: 0 8px;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 20px;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            color: white;
+        }
+        .social-buttons a:hover {
+            transform: scale(1.1);
+        }
+        .social-buttons .github { background-color: #333333; }
+        .social-buttons .linkedin { background-color: #0077B5; }
     </style>
 </head>
 <body>
@@ -49,8 +72,7 @@
     <header>
         <h1>Anna Vitória Soares Queiroz Vasconcelos</h1>
         <h2>Graduanda em Sistemas de Informação - 1º Período</h2>
-	<img src="foto_eu.jpeg" alt="Foto de Anna" class="foto-perfil">
-	</a>
+        <img src="foto_eu.jpeg" alt="Foto de Anna" class="foto-perfil">
     </header>
 
     <nav>
@@ -62,15 +84,14 @@
     </nav>
 
     <main>
-
         <section id="sobre">
             <h3>Data de Nascimento</h3>
-            <p><strong>05/01/2000</strong> </p>
+            <p><strong>05/01/2000</strong></p>
 
             <article>
                 <h3>Quem sou eu</h3>
                 <p>
-                    Olá! Me chamo Anna (安娜). Sou apaixonada por tecnologia, música e e literatura.
+                    Olá! Me chamo Anna (安娜). Sou apaixonada por tecnologia, música e literatura.
                     Nas horas vagas, gosto de ler livros de fantasia — meus favoritos são 
                     "Através do Espelho" de Jostein Gaarder e a série "Crepúsculo". Também adoro jogar video game, 
                     andar de bicicleta e estou tentando aprender mandarim. Atualmente, estou escutando bastante a cantora chinesa Enno Cheng (鄭宜農).
@@ -94,7 +115,7 @@
             <h3>Meu Curso</h3>
             <p>
                 Estou cursando o <strong>Bacharelado em Sistemas de Informação</strong> no 
-                Instituto federal de Alagoas (IFAL). O curso aborda a formação de profissionais para
+                Instituto Federal de Alagoas (IFAL). O curso aborda a formação de profissionais para
                 especificar, desenvolver e gerenciar soluções computacionais complexas, combinando
                 Computação, Matemática e Administração, com ênfase em gestão de TI, segurança,
                 projetos, inovação e responsabilidade social e ambiental.
@@ -110,6 +131,12 @@
 
     <footer>
         <p>© 2026 - Anna Queiroz | E-mail: avsqv1@aluno.ifal.edu.br</p>
+        
+        <div class="social-buttons">
+            <a href="https://github.com/Nikavon/" class="github" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/avsqv" class="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        
         <p>Desenvolvido para a disciplina de Introdução às Tecnologias Web - Frontend</p>
     </footer>
 
