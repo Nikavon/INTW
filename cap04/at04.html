@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recursos Multimídia — Cap. 4 / Ativ. 4</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #D5E7B5;
+      line-height: 1.5;
+    }
+    header, main, footer {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    header {
+      background: linear-gradient(135deg, #6E1A37 0%, #AE2448 100%);
+      color: white;
+      text-align: center;
+    }
+    header h1 {
+      color: white;
+      margin: 0;
+    }
+    h2 {
+      color: #6E1A37;
+      border-left: 5px solid #72BAA9;
+      padding-left: 15px;
+    }
+    figure {
+      margin: 20px 0;
+      text-align: center;
+    }
+    figcaption {
+      margin-top: 10px;
+      font-style: italic;
+      color: #555;
+    }
+    video, audio, iframe {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    iframe {
+      border: none;
+    }
+    .voltar {
+      display: inline-block;
+      background-color: #6E1A37;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    .voltar:hover {
+      background-color: #AE2448;
+    }
+    footer {
+      text-align: center;
+      background: #72BAA9;
+      color: white;
+    }
+    footer a {
+      color: white;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Recursos Multimídia — Programação Web 1</h1>
+</header>
+
+<main>
+
+  <section>
+    <h2>Aula em Vídeo</h2>
+    <figure>
+      <video controls width="800" height="450"
+             poster="poster-aula.jpg"
+             preload="metadata">
+        <source src="videos/aula-html.mp4" type="video/mp4">
+        <source src="videos/aula-html.webm" type="video/webm">
+        <track kind="subtitles" src="legendas/aula-html.vtt"
+               srclang="pt" label="Portugues" default>
+        <p>
+          Seu navegador não suporta vídeo HTML5.
+          <a href="videos/aula-html.mp4">Baixe o vídeo aqui</a>.
+        </p>
+      </video>
+      <figcaption>
+        Video 1 — Introdução ao HTML Semântico. Produção própria, IFAL, 2026.
+      </figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Podcast do Curso</h2>
+    <figure>
+      <audio controls preload="metadata">
+        <source src="audios/episodio-web.mp3" type="audio/mpeg">
+        <source src="audios/episodio-web.ogg" type="audio/ogg">
+        <p>
+          Seu navegador não suporta áudio HTML5.
+          <a href="audios/episodio-web.mp3">Baixe o áudio aqui</a>.
+        </p>
+      </audio>
+      <figcaption>
+        Episódio 1: Fundamentos da Web Moderna. 
+        <a href="transcricao.html">Link para transcrição</a>.
+      </figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Video Externo (YouTube)</h2>
+    <figure>
+      <iframe width="800" height="450"
+              src="https://youtu.be/gK2AjgKh6r4?si=NAyEZWeAf-Ea7cp9"
+              title="TODOS OS GATOS! | Minuto da Terra"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+      </iframe>
+      <figcaption>
+        Video: TODOS OS GATOS! | Minuto da Terra - Canal Minuto da Terra, via YouTube.
+      </figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Imagem Responsiva</h2>
+    <figure>
+      <picture>
+        <source media="(min-width: 768px)" srcset="img/banner-wide.jpg">
+        <img src="img/banner-mobile.jpg" alt="Infraestrutura do laboratorio de informatica do IFAL"
+             width="800" height="450" loading="lazy">
+      </picture>
+      <figcaption>
+        Laboratório de Informática do IFAL - versão desktop (wide) e mobile.
+      </figcaption>
+    </figure>
+  </section>
+
+</main>
+
+<footer>
+  <p>
+    Atividade 4 — Capítulo 4 | Programação Web 1 |
+    Aluna: Anna Queiroz | Matrícula: 2026001267 |
+    <time datetime="2026-05-03">Maio de 2026</time>
+  </p>
+  <p><a href="../index.html" class="voltar">Voltar a página principal</a></p>
+</footer>
+
+</body>
+</html>
