@@ -113,6 +113,52 @@
             display: block;
             margin: 15px auto;
         }
+
+        /* Estilos para o bloco de navegação do Capítulo 4 - VERSÃO VERTICAL */
+        .nav-capitulo {
+            background-color: #D5E7B5;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        .nav-capitulo h3 {
+            color: #6E1A37;
+            margin-top: 0;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #6E1A37;
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+        .lista-atividades {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .lista-atividades li {
+            margin: 0;
+            width: 100%;
+        }
+        .lista-atividades a {
+            display: block;
+            padding: 12px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.2s ease;
+            text-align: left;
+        }
+        .lista-atividades a:hover {
+            transform: translateX(5px);
+            text-decoration: none;
+        }
+        .btn-at1 { background-color: #6E1A37; color: white; }
+        .btn-at2 { background-color: #72BAA9; color: #6E1A37; }
+        .btn-at3 { background-color: #6E1A37; color: white; }
+        .btn-at4 { background-color: #72BAA9; color: #6E1A37; }
+        .lista-atividades a:hover { opacity: 0.9; }
     </style>
 </head>
 <body>
@@ -132,6 +178,17 @@
     </nav>
 
     <main>
+        <!-- BLOCO DE NAVEGAÇÃO DO CAPÍTULO 4 - VERSÃO VERTICAL (UM EMBAIXO DO OUTRO) -->
+        <nav class="nav-capitulo" aria-label="Atividades do Capítulo 4">
+            <h3>📚 Capítulo 4 — Tabelas, Listas e Mídia</h3>
+            <ul class="lista-atividades">
+                <li><a href="cap04/at01.html" class="btn-at1">Atividade 1 — Tabela Básica</a></li>
+                <li><a href="cap04/at02.html" class="btn-at2">Atividade 2 — Tabela Semântica com Mesclagem</a></li>
+                <li><a href="cap04/at03.html" class="btn-at3">Atividade 3 — Listas Avançadas e Glossário</a></li>
+                <li><a href="cap04/at04.html" class="btn-at4">Atividade 4 — Página Multimídia</a></li>
+            </ul>
+        </nav>
+
         <section id="sobre">
             <h3>Data de Nascimento</h3>
             <p><strong>05/01/2000</strong></p>
