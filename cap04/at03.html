@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listas Avançadas — Cap. 4 / Ativ. 3</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #D5E7B5;
+      line-height: 1.5;
+    }
+    h1, h2 {
+      color: #6E1A37;
+    }
+    h1 {
+      text-align: center;
+      border-bottom: 3px solid #6E1A37;
+      padding-bottom: 10px;
+    }
+    section {
+      background: white;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    dl, ol, ul {
+      margin: 15px 0;
+    }
+    dt {
+      font-weight: bold;
+      color: #AE2448;
+      margin-top: 10px;
+    }
+    dd {
+      margin-left: 20px;
+      margin-bottom: 8px;
+    }
+    .voltar {
+      display: inline-block;
+      background-color: #6E1A37;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      transition: 0.2s;
+    }
+    .voltar:hover {
+      background-color: #AE2448;
+    }
+    ol[reversed] li p {
+      margin: 5px 0 0 0;
+      font-size: 0.9em;
+      color: #333;
+    }
+    ol[reversed] li {
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>📘 Guia de Referência Rápida — Desenvolvimento Web</h1>
+
+<section>
+  <h2>1. 🗺️ Roteiro de Estudos</h2>
+  <p><strong>Etapa 1 — Fundamentos essenciais:</strong></p>
+  <ol type="1">
+    <li>
+      HTML e semântica
+      <ol type="a">
+        <li>Estrutura básica (DOCTYPE, html, head, body)</li>
+        <li>Elementos semânticos (header, main, section, article)</li>
+        <li>Formulários e inputs</li>
+      </ol>
+    </li>
+    <li>
+      CSS: estilização e layout
+      <ol type="a">
+        <li>Seletores e box model</li>
+        <li>Flexbox e Grid</li>
+        <li>Responsividade com media queries</li>
+      </ol>
+    </li>
+    <li>
+      JavaScript fundamental
+      <ol type="a">
+        <li>Variáveis, funções e escopo</li>
+        <li>Manipulação do DOM</li>
+        <li>Eventos e callbacks</li>
+      </ol>
+    </li>
+  </ol>
+
+  <p><strong>Etapa 2 — Aprofundamento (continuação):</strong></p>
+  <ol type="1" start="4">
+    <li>
+      Versionamento com Git
+      <ol type="a">
+        <li>Comandos básicos (commit, push, pull)</li>
+        <li>Branching e merge</li>
+        <li>Trabalho colaborativo no GitHub</li>
+      </ol>
+    </li>
+    <li>
+      Frameworks e bibliotecas
+      <ol type="a">
+        <li>React: componentes e estado</li>
+        <li>Vue.js: diretivas e reatividade</li>
+        <li>Comparativo de ecossistemas</li>
+      </ol>
+    </li>
+    <li>
+      Backend e APIs
+      <ol type="a">
+        <li>Node.js e Express</li>
+        <li>RESTful APIs</li>
+        <li>Autenticação JWT</li>
+      </ol>
+    </li>
+  </ol>
+</section>
+
+<section>
+  <h2>2. 🏆 Ranking de Tecnologias (relevância para o curso)</h2>
+  <p>Ordem decrescente: da 5ª posição (menos prioritária) para a 1ª (mais importante).</p>
+  <ol reversed>
+    <li>
+      5º - jQuery
+      <p>Biblioteca que simplificava manipulação do DOM e AJAX. Hoje menos usada, mas ainda presente em projetos legados.</p>
+    </li>
+    <li>
+      4º - Bootstrap
+      <p>Framework CSS que acelera prototipagem. Básico para entender grids e componentes prontos.</p>
+    </li>
+    <li>
+      3º - TypeScript
+      <p>Superset tipado do JavaScript. Essencial para projetos grandes e manutenibilidade.</p>
+    </li>
+    <li>
+      2º - Node.js
+      <p>JavaScript no backend. Fundamental para desenvolvimento full stack e ferramentas modernas.</p>
+    </li>
+    <li>
+      1º - JavaScript (vanilla + ES6+)
+      <p>Linguagem central da web. Indispensável para frontend, backend (Node) e automação.</p>
+    </li>
+  </ol>
+</section>
+
+<section>
+  <h2>3. 📖 Glossário Técnico</h2>
+  <dl>
+    <dt>HTML</dt>
+    <dd><strong>HyperText Markup Language</strong> – linguagem de marcação para estrutura de páginas web.</dd>
+    <dd>Define elementos como títulos, parágrafos, links e seções semânticas.</dd>
+
+    <dt>CSS</dt>
+    <dd><strong>Cascading Style Sheets</strong> – linguagem para estilização visual (cores, fontes, layout).</dd>
+    <dd>Permite responsividade e animações, separando apresentação do conteúdo.</dd>
+
+    <dt>DOM</dt>
+    <dt>Document Object Model</dt>
+    <dd>Representação em árvore do documento HTML/XML, manipulável via JavaScript para alterar dinamicamente elementos e estilos.</dd>
+
+    <dt>JavaScript</dt>
+    <dd>Linguagem de programação interpretada que adiciona interatividade, manipula eventos e comunica com servidores (AJAX/Fetch).</dd>
+
+    <dt>URL</dt>
+    <dt>URI</dt>
+    <dd><strong>Uniform Resource Locator/Identifier</strong> – endereço único de um recurso na web (ex: https://exemplo.com/pagina).</dd>
+
+    <dt>API</dt>
+    <dd><strong>Application Programming Interface</strong> – conjunto de regras que permite integração entre softwares (ex: REST API).</dd>
+
+    <dt>HTTP</dt>
+    <dd><strong>HyperText Transfer Protocol</strong> – protocolo de comunicação cliente-servidor para transferência de dados na web.</dd>
+  </dl>
+  <p><small>Total de termos: HTML, CSS, DOM, Document Object Model, JavaScript, URL, URI, API, HTTP (9 termos).</small></p>
+</section>
+
+<section>
+  <h2>4. 🧭 Mapa de Tecnologias (hierarquia aninhada)</h2>
+  <ul>
+    <li>
+      Desenvolvimento Web
+      <ul>
+        <li>
+          Frontend
+          <ul>
+            <li>
+              Linguagens
+              <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+              </ul>
+            </li>
+            <li>
+              Frameworks
+              <ul>
+                <li>React</li>
+                <li>Vue.js</li>
+                <li>Angular</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          Backend
+          <ul>
+            <li>
+              Linguagens
+              <ul>
+                <li>Python</li>
+                <li>Java</li>
+                <li>Node.js</li>
+              </ul>
+            </li>
+            <li>
+              Bancos de Dados
+              <ul>
+                <li>MySQL</li>
+                <li>PostgreSQL</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <p><em>Cada nível foi aninhado dentro de um &lt;li&gt;, conforme especificação.</em></p>
+</section>
+
+<p><a href="../index.html" class="voltar">← Voltar à página principal</a></p>
+
+</body>
+</html>
