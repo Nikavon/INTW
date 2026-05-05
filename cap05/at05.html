@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWEB1 — Cap. 05 — AT05 — Formulário de Pesquisa Acadêmica</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #D5E7B5;
+            line-height: 1.6;
+        }
+        header, main, footer {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        header {
+            background: linear-gradient(135deg, #6E1A37 0%, #AE2448 100%);
+            color: white;
+            text-align: center;
+        }
+        header h1, header p {
+            color: white;
+        }
+        header a {
+            color: #D5E7B5;
+            text-decoration: none;
+        }
+        header a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        nav a {
+            text-decoration: none;
+            color: #6E1A37;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #AE2448;
+            color: white;
+        }
+        h1, h2, h3, legend {
+            color: #6E1A37;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.9em;
+            background: #72BAA9;
+            color: white;
+        }
+        footer p {
+            color: white;
+        }
+        .social-buttons {
+            margin: 15px 0;
+        }
+        .social-buttons a {
+            display: inline-block;
+            margin: 0 8px;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 20px;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            color: white;
+        }
+        .social-buttons a:hover {
+            transform: scale(1.1);
+        }
+        .social-buttons .github { background-color: #6E1A37; }
+        .social-buttons .linkedin { background-color: #72BAA9; }
+
+        fieldset {
+            border: 2px solid #D5E7B5;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        legend {
+            font-weight: bold;
+            font-size: 1.2em;
+            padding: 0 10px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #6E1A37;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="url"],
+        input[type="number"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        input[type="range"] {
+            width: 100%;
+            margin: 10px 0;
+        }
+        .range-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .range-container span {
+            font-weight: bold;
+            color: #AE2448;
+            min-width: 30px;
+        }
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 5px;
+        }
+        .radio-group label, .checkbox-group label {
+            display: inline;
+            font-weight: normal;
+            margin-left: 5px;
+        }
+        .radio-group div, .checkbox-group div {
+            display: flex;
+            align-items: center;
+        }
+        small {
+            display: block;
+            margin-top: 5px;
+            font-size: 12px;
+            color: #666;
+        }
+        .error-message {
+            color: #AE2448;
+            font-size: 12px;
+            margin-top: 5px;
+            font-weight: bold;
+        }
+        .required {
+            color: #AE2448;
+        }
+        .required-note {
+            background-color: #D5E7B5;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        .btn-submit {
+            background-color: #6E1A37;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+        .btn-submit:hover {
+            background-color: #AE2448;
+        }
+        .tecnologias-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Formulário de Pesquisa Acadêmica</h1>
+        <p><a href="../index.html">← Voltar para a página principal</a></p>
+    </header>
+
+    <main>
+        <div class="required-note">
+            <i class="fas fa-asterisk" style="color: #AE2448; font-size: 12px;"></i> 
+            Campos marcados com <span class="required">*</span> são obrigatórios
+        </div>
+
+        <form action="https://httpbin.org/post" method="post" novalidate>
+
+            <fieldset>
+                <legend>Perfil do estudante</legend>
+
+                <div class="form-group">
+                    <label for="nome">Nome completo <span class="required">*</span></label>
+                    <input type="text" id="nome" name="nome" required aria-required="true" autocomplete="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="matricula">Matrícula <span class="required">*</span></label>
+                    <input type="text" id="matricula" name="matricula" pattern="\d{7}" required aria-required="true" placeholder="Ex: 2024123" aria-describedby="matricula-help">
+                    <small id="matricula-help">Digite 7 dígitos numéricos</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail institucional <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+\-]+@ifal\.edu\.br" required aria-required="true" aria-invalid="false" aria-describedby="erro-email" autocomplete="email" onblur="validarEmail(this)">
+                    <p id="erro-email" class="error-message" role="alert"></p>
+                    <small>Formato: usuario@ifal.edu.br</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="periodo">Período atual <span class="required">*</span></label>
+                    <select id="periodo" name="periodo" required aria-required="true">
+                        <option value="">Selecione o período</option>
+                        <option value="1">1º Período</option>
+                        <option value="2">2º Período</option>
+                        <option value="3">3º Período</option>
+                        <option value="4">4º Período</option>
+                        <option value="5">5º Período</option>
+                        <option value="6">6º Período</option>
+                        <option value="7">7º Período</option>
+                        <option value="8">8º Período</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Turno <span class="required">*</span></label>
+                    <div class="radio-group" role="radiogroup" aria-required="true">
+                        <div>
+                            <input type="radio" id="manha" name="turno" value="manha" required>
+                            <label for="manha">Manhã</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="tarde" name="turno" value="tarde" required>
+                            <label for="tarde">Tarde</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="noite" name="turno" value="noite" required>
+                            <label for="noite">Noite</label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Perfil tecnológico</legend>
+
+                <div class="form-group">
+                    <label>Tecnologias que conhece</label>
+                    <div class="tecnologias-grid">
+                        <div>
+                            <input type="checkbox" id="html" name="tecnologias" value="html">
+                            <label for="html">HTML5</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="css" name="tecnologias" value="css">
+                            <label for="css">CSS3</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="js" name="tecnologias" value="javascript">
+                            <label for="js">JavaScript</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="python" name="tecnologias" value="python">
+                            <label for="python">Python</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="java" name="tecnologias" value="java">
+                            <label for="java">Java</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="sql" name="tecnologias" value="sql">
+                            <label for="sql">SQL</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="react" name="tecnologias" value="react">
+                            <label for="react">React</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="node" name="tecnologias" value="node">
+                            <label for="node">Node.js</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="linguagem_favorita">Linguagem de programação favorita</label>
+                    <select id="linguagem_favorita" name="linguagem_favorita" aria-describedby="linguagem-help">
+                        <optgroup label="Imperativo / Estruturado">
+                            <option value="c">C</option>
+                            <option value="pascal">Pascal</option>
+                        </optgroup>
+                        <optgroup label="Orientação a Objetos">
+                            <option value="java_oo">Java</option>
+                            <option value="python_oo">Python</option>
+                            <option value="csharp">C#</option>
+                            <option value="cpp">C++</option>
+                        </optgroup>
+                        <optgroup label="Funcional">
+                            <option value="haskell">Haskell</option>
+                            <option value="elixir">Elixir</option>
+                        </optgroup>
+                        <optgroup label="Web / Script">
+                            <option value="javascript_web">JavaScript</option>
+                            <option value="typescript">TypeScript</option>
+                            <option value="php">PHP</option>
+                        </optgroup>
+                    </select>
+                    <small id="linguagem-help">Selecione sua linguagem preferida</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="experiencia">Anos de experiência com programação</label>
+                    <input type="number" id="experiencia" name="experiencia" min="0" max="30" value="0" step="1">
+                </div>
+
+                <div class="form-group">
+                    <label for="portfolio">URL do portfólio ou LinkedIn</label>
+                    <input type="url" id="portfolio" name="portfolio" placeholder="https://">
+                    <small>Digite o endereço completo do seu portfólio ou perfil do LinkedIn</small>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Avaliação da disciplina</legend>
+
+                <div class="form-group">
+                    <label for="nota_disciplina">Nota para a disciplina (0 a 10)</label>
+                    <div class="range-container">
+                        <input type="range" id="nota_disciplina" name="nota_disciplina" min="0" max="10" step="1" value="5" oninput="document.getElementById('valor-nota').textContent = this.value">
+                        <span id="valor-nota">5</span><span>/10</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Satisfação com o material didático <span class="required">*</span></label>
+                    <div class="radio-group" role="radiogroup" aria-required="true">
+                        <div>
+                            <input type="radio" id="muito_satisfeito" name="satisfacao" value="muito_satisfeito" required>
+                            <label for="muito_satisfeito">Muito satisfeito</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="satisfeito" name="satisfacao" value="satisfeito" required>
+                            <label for="satisfeito">Satisfeito</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="neutro" name="satisfacao" value="neutro" required>
+                            <label for="neutro">Neutro</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="insatisfeito" name="satisfacao" value="insatisfeito" required>
+                            <label for="insatisfeito">Insatisfeito</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="muito_insatisfeito" name="satisfacao" value="muito_insatisfeito" required>
+                            <label for="muito_insatisfeito">Muito insatisfeito</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="sugestoes">Sugestões de melhoria</label>
+                    <textarea id="sugestoes" name="sugestoes" maxlength="1000" rows="6" placeholder="Deixe aqui suas sugestões para melhorias na disciplina..."></textarea>
+                    <small>Máximo de 1000 caracteres</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="data_preenchimento">Data de preenchimento <span class="required">*</span></label>
+                    <input type="date" id="data_preenchimento" name="data_preenchimento" required aria-required="true">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Consentimento e envio</legend>
+
+                <div class="form-group">
+                    <div>
+                        <input type="checkbox" id="consentimento" name="consentimento" required aria-required="true" aria-describedby="consentimento-help">
+                        <label for="consentimento">Autorizo a utilização dos meus dados para fins acadêmicos <span class="required">*</span></label>
+                    </div>
+                    <small id="consentimento-help">Seus dados serão utilizados exclusivamente para pesquisa acadêmica</small>
+                </div>
+
+                <input type="hidden" name="pesquisa_id" value="PWEB1-2026-1">
+            </fieldset>
+
+            <button type="submit" class="btn-submit">Enviar pesquisa</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>© 2026 - Anna Queiroz | E-mail: avsqv1@aluno.ifal.edu.br</p>
+        <div class="social-buttons">
+            <a href="https://github.com/Nikavon" class="github" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/avsqv/" class="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p>Desenvolvido para a disciplina de Introdução às Tecnologias Web - Frontend</p>
+    </footer>
+
+    <script>
+        function validarEmail(campo) {
+            const erro = document.getElementById('erro-email');
+            if (!campo.value.endsWith('@ifal.edu.br')) {
+                erro.textContent = 'Informe seu e-mail institucional (@ifal.edu.br)';
+                campo.setAttribute('aria-invalid', 'true');
+            } else {
+                erro.textContent = '';
+                campo.setAttribute('aria-invalid', 'false');
+            }
+        }
+
+        document.getElementById('data_preenchimento').max = new Date().toISOString().split('T')[0];
+    </script>
+
+</body>
+</html>
