@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição - Semana de Tecnologia IFAL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #D5E7B5;
+            line-height: 1.6;
+        }
+        header, main, footer, .form-container {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        header {
+            background: linear-gradient(135deg, #6E1A37 0%, #AE2448 100%);
+            color: white;
+            text-align: center;
+        }
+        header h1, header h2 {
+            color: white;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        nav a {
+            text-decoration: none;
+            color: #6E1A37;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #AE2448;
+            color: white;
+        }
+        h1, h2, h3 {
+            color: #6E1A37;
+        }
+        header h1, header h2 {
+            color: white;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.9em;
+            background: #72BAA9;
+            color: white;
+        }
+        footer p {
+            color: white;
+        }
+        .social-buttons {
+            margin: 15px 0;
+        }
+        .social-buttons a {
+            display: inline-block;
+            margin: 0 8px;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 20px;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            color: white;
+        }
+        .social-buttons a:hover {
+            transform: scale(1.1);
+        }
+        .social-buttons .github { background-color: #6E1A37; }
+        .social-buttons .linkedin { background-color: #72BAA9; }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #6E1A37;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="datetime-local"],
+        input[type="file"],
+        input[type="color"],
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        input[type="range"] {
+            width: 100%;
+            margin: 10px 0;
+        }
+        select[multiple] {
+            height: auto;
+        }
+        small {
+            display: block;
+            margin-top: 5px;
+            font-size: 12px;
+            color: #666;
+        }
+        .range-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .range-container span {
+            font-weight: bold;
+            color: #AE2448;
+            min-width: 30px;
+        }
+        .btn-submit {
+            background-color: #6E1A37;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+        .btn-submit:hover {
+            background-color: #AE2448;
+        }
+        hr {
+            margin: 20px 0;
+            border: none;
+            border-top: 2px solid #D5E7B5;
+        }
+        .required {
+            color: #AE2448;
+        }
+        .voltar {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #6E1A37;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .voltar:hover {
+            color: #AE2448;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Semana de Tecnologia IFAL</h1>
+        <h2>Formulário de Inscrição</h2>
+    </header>
+
+    <a href="../index.html" class="voltar"><i class="fas fa-arrow-left"></i> Voltar ao currículo</a>
+
+    <div class="form-container">
+        <form action="https://httpbin.org/post" method="post" enctype="multipart/form-data">
+            <h3>Identificação do participante</h3>
+
+            <div class="form-group">
+                <label for="nome">Nome completo <span class="required">*</span></label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail institucional <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cidade">Cidade de origem</label>
+                <input type="text" id="cidade" name="cidade" list="cidades">
+                <datalist id="cidades">
+                    <option value="Maceió">
+                    <option value="Arapiraca">
+                    <option value="Palmeira dos Índios">
+                    <option value="Rio Largo">
+                    <option value="União dos Palmares">
+                    <option value="Penedo">
+                    <option value="São Miguel dos Campos">
+                    <option value="Coruripe">
+                    <option value="Marechal Deodoro">
+                    <option value="Porto Calvo">
+                </datalist>
+            </div>
+
+            <div class="form-group">
+                <label for="foto">Foto para crachá</label>
+                <input type="file" id="foto" name="foto" accept="image/jpeg,image/png" aria-describedby="foto-help">
+                <small id="foto-help">Formatos aceitos: JPG e PNG. Tamanho máximo: 2 MB.</small>
+            </div>
+
+            <hr>
+
+            <h3>Preferências para o evento</h3>
+
+            <div class="form-group">
+                <label for="chegada">Data e hora preferida para chegada</label>
+                <input type="datetime-local" id="chegada" name="chegada">
+            </div>
+
+            <div class="form-group">
+                <label for="experiencia">Nível de experiência em programação</label>
+                <div class="range-container">
+                    <input type="range" id="experiencia" name="experiencia" min="0" max="10" step="1" value="5" oninput="document.getElementById('valor-exp').textContent = this.value">
+                    <span id="valor-exp">5</span><span>/10</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="cor_camiseta">Cor de preferência para a camiseta</label>
+                <input type="color" id="cor_camiseta" name="cor_camiseta" value="#1a73e8">
+            </div>
+
+            <div class="form-group">
+                <label for="oficinas">Oficinas de interesse</label>
+                <select multiple id="oficinas" name="oficinas[]" size="4" aria-describedby="oficinas-help">
+                    <option value="ia">Introdução à Inteligência Artificial</option>
+                    <option value="web">Desenvolvimento Web Avançado</option>
+                    <option value="cyber">Fundamentos de Cybersegurança</option>
+                    <option value="mobile">Desenvolvimento Mobile com React Native</option>
+                    <option value="cloud">Computação em Nuvem (AWS)</option>
+                    <option value="data">Data Science e Python</option>
+                    <option value="game">Game Design</option>
+                </select>
+                <small id="oficinas-help">Use Ctrl (ou Cmd no Mac) para selecionar mais de uma oficina.</small>
+            </div>
+
+            <input type="hidden" name="edicao" value="2026">
+
+            <button type="submit" class="btn-submit">Confirmar inscrição</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>© 2026 - Anna Queiroz | E-mail: avsqv1@aluno.ifal.edu.br</p>
+        <div class="social-buttons">
+            <a href="https://github.com/Nikavon" class="github" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/avsqv/" class="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p>Desenvolvido para a disciplina de Introdução às Tecnologias Web - Frontend</p>
+    </footer>
+
+</body>
+</html>
