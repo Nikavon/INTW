@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PWEB1 — Cap. 07 — AT03 — Galeria de Seletores</title>
+  <link rel="stylesheet" href="at03.css" />
+</head>
+<body>
+  <header>
+    <h1>Galeria de Seletores CSS</h1>
+    <p><a href="../index.html">← Voltar para a página principal</a></p>
+  </header>
+
+  <main>
+
+    <section id="sec-atributo">
+      <h2>Seletores de Atributo</h2>
+      <ul>
+        <li><a href="https://ifal.edu.br">Site do IFAL</a></li>
+        <li><a href="http://exemplo.com">Link não seguro</a></li>
+        <li><a href="relatorio.pdf">Baixar relatório</a></li>
+        <li><a href="#ancora">Âncora interna</a></li>
+        <li><a href="https://github.com" target="_blank">GitHub</a></li>
+      </ul>
+    </section>
+
+    <section id="sec-estrutural">
+      <h2>Pseudo-classes Estruturais</h2>
+      <ol>
+        <li>Primeiro item</li>
+        <li>Segundo item</li>
+        <li>Terceiro item</li>
+        <li>Quarto item</li>
+        <li>Quinto item</li>
+        <li>Sexto item</li>
+      </ol>
+    </section>
+
+    <section id="sec-estado">
+      <h2>Pseudo-classes de Estado</h2>
+      <form novalidate>
+        <label for="nome-03">Nome:</label>
+        <input type="text" id="nome-03" name="nome" required placeholder="Seu nome" />
+
+        <label for="email-03">E-mail:</label>
+        <input type="email" id="email-03" name="email" required placeholder="usuario@dominio.com" />
+
+        <label for="obs-03">Observações (opcional):</label>
+        <input type="text" id="obs-03" name="obs" placeholder="Campo opcional" />
+
+        <label for="cidade-03">Cidade:</label>
+        <input type="text" id="cidade-03" name="cidade" disabled value="Maceió" />
+
+        <label>
+          <input type="checkbox" name="aceite-03" />
+          Concordo com os termos
+        </label>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+    <section id="sec-pseudoelemento">
+      <h2>Pseudo-elementos</h2>
+      <p class="citacao">A Web é para todos.</p>
+      <p class="obrigatorio">Este campo é obrigatório</p>
+      <p class="destaque-selecao">Selecione este texto com o mouse.</p>
+      <input type="text" class="input-custom" placeholder="Digite algo aqui..." />
+    </section>
+
+    <section id="sec-combinadores">
+      <h2>Combinadores e :not()</h2>
+      <h3>Título do bloco A</h3>
+      <p>Parágrafo imediatamente após o título — deve ter estilo diferenciado.</p>
+      <p>Segundo parágrafo — estilo padrão.</p>
+      <p>Terceiro parágrafo — estilo padrão.</p>
+
+      <ul>
+        <li class="ativo">Item ativo</li>
+        <li>Item inativo</li>
+        <li class="ativo">Item ativo</li>
+        <li>Item inativo</li>
+        <li class="ativo">Item ativo</li>
+      </ul>
+    </section>
+
+  </main>
+</body>
+</html>
