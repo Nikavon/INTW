@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PWEB1 — Cap. 07 — AT05 — Mini Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="at05-style.css" />
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero__conteudo">
+      <h1 class="hero__titulo">Design System Aurora</h1>
+      <p class="hero__subtitulo">Um sistema de design consistente, acessível e moderno para aplicações web</p>
+      <a href="#componentes" class="hero__cta">Explorar componentes</a>
+    </div>
+  </section>
+
+  <main id="componentes">
+    <div class="container">
+      
+      <section>
+        <h2 class="section__titulo">Botões</h2>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+          <button class="btn btn--primario">Ação principal</button>
+          <button class="btn btn--secundario">Ação secundária</button>
+          <button class="btn btn--perigo">Ação destrutiva</button>
+          <button class="btn btn--primario" disabled>Desabilitado</button>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section__titulo">Cartões</h2>
+        <div class="grid-cards">
+          <article class="card">
+            <span class="card__badge">Destaque</span>
+            <div class="card__imagem"></div>
+            <div class="card__corpo">
+              <h3 class="card__titulo">Componentes Reutilizáveis</h3>
+              <p class="card__texto">Botões, cartões, formulários e muito mais com nomenclatura BEM para fácil manutenção.</p>
+              <a class="card__link" href="#">Saiba mais →</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <span class="card__badge">Novo</span>
+            <div class="card__imagem"></div>
+            <div class="card__corpo">
+              <h3 class="card__titulo">Tokens de Design</h3>
+              <p class="card__texto">Cores, tipografia fluida com clamp(), espaçamento e sombras padronizados.</p>
+              <a class="card__link" href="#">Saiba mais →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section__titulo">Tokens de Cor</h2>
+        <table class="tabela-cores">
+          <thead>
+            <tr>
+              <th>Cor</th>
+              <th>Nome da Variável</th>
+              <th>Valor HEX</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="background-color: #6E1A37;"></td>
+              <td><code>--cor-primaria</code></td>
+              <td>#6E1A37</td>
+            </tr>
+            <tr>
+              <td style="background-color: #72BAA9;"></td>
+              <td><code>--cor-secundaria</code></td>
+              <td>#72BAA9</td>
+            </tr>
+            <tr>
+              <td style="background-color: #AE2448;"></td>
+              <td><code>--cor-destaque</code></td>
+              <td>#AE2448</td>
+            </tr>
+            <tr>
+              <td style="background-color: #2e7d32;"></td>
+              <td><code>--cor-sucesso</code></td>
+              <td>#2e7d32</td>
+            </tr>
+            <tr>
+              <td style="background-color: #c62828;"></td>
+              <td><code>--cor-erro</code></td>
+              <td>#c62828</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2 class="section__titulo">Formulário</h2>
+        <form class="form" novalidate>
+          <div class="form__grupo">
+            <label class="form__label" for="nome">Nome completo *</label>
+            <input class="form__input" type="text" id="nome" name="nome" required placeholder="Digite seu nome completo" />
+            <span class="form__mensagem-erro"></span>
+          </div>
+
+          <div class="form__grupo">
+            <label class="form__label" for="email">E-mail *</label>
+            <input class="form__input" type="email" id="email" name="email" required placeholder="usuario@exemplo.com" />
+            <span class="form__mensagem-erro"></span>
+          </div>
+
+          <div class="form__grupo">
+            <label class="form__label" for="telefone">Telefone</label>
+            <input class="form__input" type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" />
+          </div>
+
+          <div class="form__grupo">
+            <label class="form__label" for="mensagem">Mensagem</label>
+            <input class="form__input" type="text" id="mensagem" name="mensagem" placeholder="Sua mensagem aqui..." />
+          </div>
+
+          <button type="submit" class="form__botao">Enviar mensagem</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>Design System Aurora — Criado para INTW</p>
+  </footer>
+
+</body>
+</html>
