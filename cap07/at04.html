@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PWEB1 — Cap. 07 — AT04 — Página com Posicionamento</title>
+  <link rel="stylesheet" href="at04.css" />
+</head>
+<body id="topo">
+
+  <nav class="nav-fixa">
+    <ul>
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#tecnologia">Tecnologia</a></li>
+      <li><a href="#inovacao">Inovação</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="inicio">
+      <h1>Posicionamento em CSS</h1>
+      <p>Este artigo demonstra os quatro valores de posicionamento estudados no capítulo: fixed, sticky, relative + absolute, e fixed para botão de voltar ao topo, além de um tooltip com visibility. Role a página para visualizar todos os efeitos de posicionamento em ação.</p>
+    </section>
+
+    <section id="tecnologia">
+      <h2 class="titulo-sticky">Tecnologia e Inovação</h2>
+      
+      <article class="cartao-destaque">
+        <span class="selo">NOVO</span>
+        <h3>Inteligência Artificial Generativa</h3>
+        <p>Modelos de IA capazes de criar texto, imagem, áudio e vídeo estão revolucionando a forma como produzimos conteúdo. Ferramentas como ChatGPT, Midjourney e Stable Diffusion democratizam o acesso à criatividade assistida por máquina. Estas tecnologias utilizam redes neurais profundas treinadas em bilhões de parâmetros para gerar resultados surpreendentemente coerentes e criativos.</p>
+      </article>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      
+      <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Hendrerit nisi nisl ultricies habitant torquent class. Fusce sollicitudin praesent metus suscipit; dolor volutpat aliquam. Ultrices id volutpat fusce consectetur class maecenas vestibulum. Commodo maecenas fames duis hendrerit nostra quis sagittis. Adipiscing quis convallis vehicula pretium venenatis leo. Velit maximus ligula quisque rhoncus bibendum vivamus. Curabitur quisque faucibus luctus fames dapibus nisl massa semper. Ornare ante varius auctor dictumst tristique platea magnis scelerisque.</p>
+      
+      <p>Passe o mouse sobre 
+        <span class="tooltip-container">
+          esta palavra
+          <span class="tooltip-texto">Dica: posicionamento absolute + visibility!</span>
+        </span> 
+        para ver o tooltip.
+      </p>
+
+      <p>Conubia himenaeos semper iaculis elementum venenatis gravida suspendisse. Nunc fringilla dignissim felis donec suspendisse laoreet porta. Ligula malesuada nam mollis ridiculus nibh placerat neque. Congue dapibus maximus facilisis convallis congue integer viverra. Nascetur nunc egestas class odio a ut ornare himenaeos. Ullamcorper varius nisl curabitur senectus suspendisse nisi rutrum mattis.</p>
+      
+      <p>Dapibus molestie sit mollis hac risus convallis convallis dis. Turpis euismod iaculis nibh habitant convallis congue. Himenaeos gravida ridiculus mauris amet, eu suspendisse platea. Cras tortor class mi class cursus eleifend. Metus faucibus adipiscing dui quis natoque dictum placerat. Integer sagittis rutrum himenaeos pharetra metus. Class praesent sit pulvinar parturient porttitor diam amet luctus.</p>
+      
+      <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Hendrerit nisi nisl ultricies habitant torquent class. Fusce sollicitudin praesent metus suscipit; dolor volutpat aliquam. Ultrices id volutpat fusce consectetur class maecenas vestibulum. Commodo maecenas fames duis hendrerit nostra quis sagittis. Adipiscing quis convallis vehicula pretium venenatis leo. Velit maximus ligula quisque rhoncus bibendum vivamus.</p>
+    </section>
+
+    <section id="inovacao">
+      <h2 class="titulo-sticky">O Futuro da Web</h2>
+      
+      <article class="cartao-destaque">
+        <span class="selo">DESTAQUE</span>
+        <h3>Web Components e Micro-frontends</h3>
+        <p>A evolução da arquitetura frontend caminha para componentes reutilizáveis e microsserviços também no cliente. Web Components nativos (Custom Elements, Shadow DOM) permitem criar elementos encapsulados e portáveis entre diferentes frameworks. Esta abordagem reduz o acoplamento e facilita a manutenção de grandes aplicações.</p>
+      </article>
+
+      <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Hendrerit nisi nisl ultricies habitant torquent class. Fusce sollicitudin praesent metus suscipit; dolor volutpat aliquam. Ultrices id volutpat fusce consectetur class maecenas vestibulum. Commodo maecenas fames duis hendrerit nostra quis sagittis. Adipiscing quis convallis vehicula pretium venenatis leo. Velit maximus ligula quisque rhoncus bibendum vivamus. Curabitur quisque faucibus luctus fames dapibus nisl massa semper. Ornare ante varius auctor dictumst tristique platea magnis scelerisque.</p>
+      
+      <p>Conubia himenaeos semper iaculis elementum venenatis gravida suspendisse. Nunc fringilla dignissim felis donec suspendisse laoreet porta. Ligula malesuada nam mollis ridiculus nibh placerat neque. Congue dapibus maximus facilisis convallis congue integer viverra. Nascetur nunc egestas class odio a ut ornare himenaeos. Ullamcorper varius nisl curabitur senectus suspendisse nisi rutrum mattis.</p>
+      
+      <p>Dapibus molestie sit mollis hac risus convallis convallis dis. Turpis euismod iaculis nibh habitant convallis congue. Himenaeos gravida ridiculus mauris amet, eu suspendisse platea. Cras tortor class mi class cursus eleifend. Metus faucibus adipiscing dui quis natoque dictum placerat. Integer sagittis rutrum himenaeos pharetra metus. Class praesent sit pulvinar parturient porttitor diam amet luctus.</p>
+      
+      <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Hendrerit nisi nisl ultricies habitant torquent class. Fusce sollicitudin praesent metus suscipit; dolor volutpat aliquam. Ultrices id volutpat fusce consectetur class maecenas vestibulum. Commodo maecenas fames duis hendrerit nostra quis sagittis. Adipiscing quis convallis vehicula pretium venenatis leo. Velit maximus ligula quisque rhoncus bibendum vivamus. Curabitur quisque faucibus luctus fames dapibus nisl massa semper. Ornare ante varius auctor dictumst tristique platea magnis scelerisque.</p>
+      
+      <p>Conubia himenaeos semper iaculis elementum venenatis gravida suspendisse. Nunc fringilla dignissim felis donec suspendisse laoreet porta. Ligula malesuada nam mollis ridiculus nibh placerat neque. Congue dapibus maximus facilisis convallis congue integer viverra. Nascetur nunc egestas class odio a ut ornare himenaeos. Ullamcorper varius nisl curabitur senectus suspendisse nisi rutrum mattis.</p>
+      
+      <p>Dapibus molestie sit mollis hac risus convallis convallis dis. Turpis euismod iaculis nibh habitant convallis congue. Himenaeos gravida ridiculus mauris amet, eu suspendisse platea. Cras tortor class mi class cursus eleifend. Metus faucibus adipiscing dui quis natoque dictum placerat. Integer sagittis rutrum himenaeos pharetra metus. Class praesent sit pulvinar parturient porttitor diam amet luctus.</p>
+      
+      <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Hendrerit nisi nisl ultricies habitant torquent class. Fusce sollicitudin praesent metus suscipit; dolor volutpat aliquam. Ultrices id volutpat fusce consectetur class maecenas vestibulum. Commodo maecenas fames duis hendrerit nostra quis sagittis. Adipiscing quis convallis vehicula pretium venenatis leo. Velit maximus ligula quisque rhoncus bibendum vivamus. Curabitur quisque faucibus luctus fames dapibus nisl massa semper. Ornare ante varius auctor dictumst tristique platea magnis scelerisque.</p>
+    </section>
+
+    <section id="contato">
+      <h2 class="titulo-sticky">Fale Conosco</h2>
+      <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Hendrerit nisi nisl ultricies habitant torquent class. Fusce sollicitudin praesent metus suscipit; dolor volutpat aliquam. Ultrices id volutpat fusce consectetur class maecenas vestibulum. Commodo maecenas fames duis hendrerit nostra quis sagittis.</p>
+      
+      <p>Conubia himenaeos semper iaculis elementum venenatis gravida suspendisse. Nunc fringilla dignissim felis donec suspendisse laoreet porta. Ligula malesuada nam mollis ridiculus nibh placerat neque. Congue dapibus maximus facilisis convallis congue integer viverra. Nascetur nunc egestas class odio a ut ornare himenaeos.</p>
+      
+      <p>Dapibus molestie sit mollis hac risus convallis convallis dis. Turpis euismod iaculis nibh habitant convallis congue. Himenaeos gravida ridiculus mauris amet, eu suspendisse platea. Cras tortor class mi class cursus eleifend. Metus faucibus adipiscing dui quis natoque dictum placerat. Integer sagittis rutrum himenaeos pharetra metus. Class praesent sit pulvinar parturient porttitor diam amet luctus.</p>
+      
+      <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Hendrerit nisi nisl ultricies habitant torquent class. Fusce sollicitudin praesent metus suscipit; dolor volutpat aliquam. Ultrices id volutpat fusce consectetur class maecenas vestibulum. Commodo maecenas fames duis hendrerit nostra quis sagittis. Adipiscing quis convallis vehicula pretium venenatis leo. Velit maximus ligula quisque rhoncus bibendum vivamus. Curabitur quisque faucibus luctus fames dapibus nisl massa semper.</p>
+      
+      <p>Conubia himenaeos semper iaculis elementum venenatis gravida suspendisse. Nunc fringilla dignissim felis donec suspendisse laoreet porta. Ligula malesuada nam mollis ridiculus nibh placerat neque. Congue dapibus maximus facilisis convallis congue integer viverra. Nascetur nunc egestas class odio a ut ornare himenaeos. Ullamcorper varius nisl curabitur senectus suspendisse nisi rutrum mattis.</p>
+    </section>
+  </main>
+
+  <a href="#topo" class="btn-topo" aria-label="Voltar ao topo">↑</a>
+
+</body>
+</html>
