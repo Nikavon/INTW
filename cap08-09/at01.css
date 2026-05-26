@@ -1,23 +1,23 @@
 :root {
-    --cor-primaria: #1a1a2e;
-    --cor-secundaria: #16213e;
-    --cor-destaque: #e94560;
-    --cor-destaque2: #0f3460;
-    --cor-fundo: #fafafa;
-    --cor-texto: #2c2c2c;
-    --cor-clara: #ffffff;
-    --cor-suave: #f0f0f0;
-    --cor-link: #e94560;
-    --cor-hover: #c23152;
+    --cor-primaria: #6E1A37;
+    --cor-secundaria: #AE2448;
+    --cor-destaque: #72BAA9;
+    --cor-fundo: #D5E7B5;
+    --cor-texto: #3A3A3A;
+    --cor-clara: #FFFFFF;
+    --cor-suave: #E8F0DB;
+    --cor-link: #6E1A37;
+    --cor-hover: #AE2448;
+    --cor-escura: #4A1226;
     --fonte-principal: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
     --fonte-titulos: 'Georgia', 'Times New Roman', serif;
     --espaco-pequeno: 15px;
     --espaco-medio: 30px;
     --espaco-grande: 60px;
     --borda-arredondada: 12px;
-    --sombra-suave: 0 2px 15px rgba(0,0,0,0.08);
-    --sombra-media: 0 5px 30px rgba(0,0,0,0.12);
-    --sombra-destaque: 0 8px 40px rgba(233, 69, 96, 0.15);
+    --sombra-suave: 0 2px 15px rgba(110, 26, 55, 0.08);
+    --sombra-media: 0 5px 30px rgba(110, 26, 55, 0.12);
+    --sombra-destaque: 0 8px 40px rgba(114, 186, 169, 0.2);
 }
 
 * {
@@ -28,7 +28,7 @@
 
 body {
     font-family: var(--fonte-principal);
-    background: linear-gradient(135deg, #fafafa 0%, #f0f2f5 100%);
+    background: linear-gradient(135deg, #D5E7B5 0%, #E8F0DB 100%);
     color: var(--cor-texto);
     line-height: 1.8;
     font-size: 16px;
@@ -42,18 +42,6 @@ body {
     margin: 0 auto;
     padding: 40px;
     position: relative;
-}
-
-.page-wrapper::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 350px;
-    height: 100%;
-    background: linear-gradient(180deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%);
-    z-index: -1;
-    opacity: 0.03;
 }
 
 .intro {
@@ -75,7 +63,7 @@ body {
     right: -10%;
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, rgba(233,69,96,0.3) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(114,186,169,0.3) 0%, transparent 70%);
     border-radius: 50%;
 }
 
@@ -86,7 +74,7 @@ body {
     left: -5%;
     width: 300px;
     height: 300px;
-    background: radial-gradient(circle, rgba(15,52,96,0.4) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(174,36,72,0.4) 0%, transparent 70%);
     border-radius: 50%;
 }
 
@@ -114,7 +102,7 @@ body {
 }
 
 .summary {
-    background: linear-gradient(135deg, var(--cor-destaque) 0%, #c23152 100%);
+    background: linear-gradient(135deg, var(--cor-destaque) 0%, #5A9E8E 100%);
     color: var(--cor-clara);
     padding: 30px 35px;
     border-radius: 16px;
@@ -127,7 +115,7 @@ body {
 
 .summary:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 50px rgba(233, 69, 96, 0.25);
+    box-shadow: 0 15px 50px rgba(114, 186, 169, 0.3);
 }
 
 .preamble {
@@ -147,7 +135,7 @@ body {
     left: 0;
     width: 6px;
     height: 100%;
-    background: linear-gradient(180deg, var(--cor-destaque) 0%, var(--cor-destaque2) 100%);
+    background: linear-gradient(180deg, var(--cor-destaque) 0%, var(--cor-primaria) 100%);
     border-radius: 3px 0 0 3px;
 }
 
@@ -213,7 +201,7 @@ body {
 .benefits:hover,
 .requirements:hover {
     box-shadow: var(--sombra-media);
-    border-color: var(--cor-suave);
+    border-color: var(--cor-fundo);
     transform: translateY(-5px);
 }
 
@@ -221,7 +209,7 @@ body {
 .participation h3,
 .benefits h3,
 .requirements h3 {
-    color: var(--cor-destaque);
+    color: var(--cor-primaria);
     font-family: var(--fonte-titulos);
     font-size: 1.5rem;
     margin-bottom: 20px;
@@ -255,7 +243,7 @@ body {
     border-radius: var(--borda-arredondada);
     box-shadow: var(--sombra-suave);
     transition: all 0.3s ease;
-    border: 1px solid var(--cor-suave);
+    border: 1px solid var(--cor-fundo);
 }
 
 .wrapper:hover {
@@ -286,9 +274,9 @@ body {
 }
 
 .sidebar a:hover {
-    color: var(--cor-destaque);
+    color: var(--cor-secundaria);
     text-decoration: none;
-    background-color: rgba(233, 69, 96, 0.05);
+    background-color: rgba(114, 186, 169, 0.1);
 }
 
 .sidebar a:hover::before {
@@ -307,7 +295,7 @@ body {
 .zen-resources li {
     margin: 8px 0;
     padding: 10px;
-    border-bottom: 1px solid var(--cor-suave);
+    border-bottom: 1px solid var(--cor-fundo);
     transition: all 0.3s ease;
     border-radius: 6px;
 }
@@ -315,7 +303,7 @@ body {
 .design-selection li:hover,
 .design-archives li:hover,
 .zen-resources li:hover {
-    background-color: rgba(233, 69, 96, 0.03);
+    background-color: rgba(114, 186, 169, 0.05);
     padding-left: 15px;
 }
 
@@ -333,7 +321,7 @@ body {
 
 footer {
     grid-column: 1 / -1;
-    background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%);
+    background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-escura) 100%);
     color: var(--cor-clara);
     padding: 25px 30px;
     border-radius: 16px;
@@ -363,7 +351,7 @@ footer a:hover {
     background-color: var(--cor-destaque);
     color: var(--cor-clara);
     transform: translateY(-3px);
-    box-shadow: 0 5px 20px rgba(233, 69, 96, 0.3);
+    box-shadow: 0 5px 20px rgba(114, 186, 169, 0.3);
     border-color: var(--cor-destaque);
 }
 
@@ -388,7 +376,7 @@ abbr {
     border-bottom: 2px dotted var(--cor-destaque);
     cursor: help;
     text-decoration: none;
-    color: var(--cor-destaque);
+    color: var(--cor-primaria);
     font-weight: 600;
 }
 
@@ -571,20 +559,20 @@ abbr {
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --cor-fundo: #1a1a2e;
-        --cor-texto: #e0e0e0;
-        --cor-clara: #2a2a3e;
-        --cor-suave: #333350;
-        --cor-primaria: #e94560;
-        --cor-secundaria: #0f3460;
+        --cor-fundo: #2C1A24;
+        --cor-texto: #E0D8DC;
+        --cor-clara: #3D2A33;
+        --cor-suave: #4A3540;
+        --cor-primaria: #AE2448;
+        --cor-secundaria: #6E1A37;
     }
     
     body {
-        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        background: linear-gradient(135deg, #2C1A24 0%, #1A1228 100%);
     }
     
     .intro {
-        background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+        background: linear-gradient(135deg, #4A1226 0%, #6E1A37 100%);
     }
     
     .explanation,
@@ -598,10 +586,10 @@ abbr {
     }
     
     p {
-        color: #ccc;
+        color: #CCC;
     }
     
     .sidebar a {
-        color: #e0e0e0;
+        color: #E0D8DC;
     }
 }
