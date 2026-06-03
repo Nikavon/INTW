@@ -22,12 +22,13 @@ Criar uma versão própria e responsiva da homepage da COPEVE/UFAL, mantendo a i
 - prefers-color-scheme (Dark Mode)
 - clamp() para tipografia fluida
 - Font Awesome para ícones
+- Favicon Generation
 
 ## Estratégia Responsiva Utilizada
 Mobile-first. Todo o CSS foi desenvolvido inicialmente para telas pequenas (smartphones) e, em seguida, foram adicionados breakpoints com min-width para tablets e desktops.
 
 ## Breakpoints Implementados
-- 640px (tablets pequenos)
+- 640px (smartphones)
 - 768px (tablets)
 - 1024px (desktops pequenos)
 - 1280px (desktops largos)
