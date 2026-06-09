@@ -57,11 +57,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     btnAlterarFoto.addEventListener('click', function() {
-        const novaUrl = prompt('Digite o caminho da nova foto (ex: imagens/nova_foto.jpg):');
-        if (novaUrl && novaUrl.trim() !== '') {
-            fotoPerfil.src = novaUrl.trim();
-            registrarAcao('Alteração de foto');
-        }
+        fotoPerfil.src = 'imagens/nova_foto.jpg';
+        registrarAcao('Alteração de foto');
     });
 
     btnDestacarPerfil.addEventListener('click', function() {
