@@ -1,27 +1,26 @@
 document.addEventListener('DOMContentLoaded', function() {
-
     const nomePerfil = document.getElementById('nomePerfil');
     const cursoPerfil = document.getElementById('cursoPerfil');
     const fotoPerfil = document.getElementById('fotoPerfil');
-    const cartaoPerfil = document.getElementById('cartaoPerfil');
-    const biografia = document.getElementById('biografia');
+    const perfilSection = document.getElementById('perfil');
+    const biografiaPerfil = document.getElementById('biografiaPerfil');
 
     const btnAlterarNome = document.getElementById('btnAlterarNome');
     const btnAlterarCurso = document.getElementById('btnAlterarCurso');
     const btnAlterarFoto = document.getElementById('btnAlterarFoto');
     const btnDestacarPerfil = document.getElementById('btnDestacarPerfil');
-    const btnRestaurarPerfil = document.getElementById('btnRestaurarPerfil');
+    const btnRestaurar = document.getElementById('btnRestaurar');
     const btnAtualizarContato = document.getElementById('btnAtualizarContato');
 
-    const seletorTema = document.getElementById('seletorTema');
-    const controleFonte = document.getElementById('controleFonte');
+    const temaSelect = document.getElementById('temaSelect');
+    const fonteRange = document.getElementById('fonteRange');
     const valorFonte = document.getElementById('valorFonte');
-    const checkboxBiografia = document.getElementById('checkboxBiografia');
+    const mostrarBio = document.getElementById('mostrarBio');
 
-    const inputEmail = document.getElementById('inputEmail');
-    const inputTelefone = document.getElementById('inputTelefone');
-    const resumoEmail = document.getElementById('resumoEmail');
-    const resumoTelefone = document.getElementById('resumoTelefone');
+    const emailInput = document.getElementById('emailInput');
+    const telefoneInput = document.getElementById('telefoneInput');
+    const emailExibido = document.getElementById('emailExibido');
+    const telefoneExibido = document.getElementById('telefoneExibido');
 
     const contadorAcoes = document.getElementById('contadorAcoes');
     const ultimaAcao = document.getElementById('ultimaAcao');
@@ -41,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     btnAlterarNome.addEventListener('click', function() {
-        const novoNome = prompt('Digite o novo nome para o perfil:');
+        const novoNome = prompt('Digite o novo nome para o perfil:', nomePerfil.textContent);
         if (novoNome && novoNome.trim() !== '') {
             nomePerfil.textContent = novoNome.trim();
             registrarAcao('Alteração de nome');
@@ -49,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     btnAlterarCurso.addEventListener('click', function() {
-        const novoCurso = prompt('Digite o novo curso:');
+        const novoCurso = prompt('Digite o novo curso:', cursoPerfil.textContent);
         if (novoCurso && novoCurso.trim() !== '') {
             cursoPerfil.textContent = novoCurso.trim();
             registrarAcao('Alteração de curso');
@@ -57,67 +56,74 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     btnAlterarFoto.addEventListener('click', function() {
-        fotoPerfil.src = 'imagens/nova_foto.jpg';
-        registrarAcao('Alteração de foto');
+        const novaFoto = prompt('Insira o caminho da nova foto (ex: imagens/perfil2.jpg):', 'imagens/nova_foto.jpg');
+        if (novaFoto && novaFoto.trim() !== '') {
+            fotoPerfil.src = novaFoto.trim();
+            registrarAcao('Alteração de foto');
+        } else if (novaFoto === '') {
+            fotoPerfil.src = 'imagens/nova_foto.jpg';
+            registrarAcao('Alteração de foto (padrão)');
+        }
     });
 
     btnDestacarPerfil.addEventListener('click', function() {
-        cartaoPerfil.classList.add('destaque');
+        perfilSection.classList.add('destaque');
         registrarAcao('Destaque do perfil');
     });
 
-    btnRestaurarPerfil.addEventListener('click', function() {
+    btnRestaurar.addEventListener('click', function() {
         nomePerfil.textContent = estadoOriginal.nome;
         cursoPerfil.textContent = estadoOriginal.curso;
         fotoPerfil.src = estadoOriginal.foto;
-        cartaoPerfil.classList.remove('destaque');
+        perfilSection.classList.remove('destaque');
         registrarAcao('Restauração do perfil');
     });
 
-    seletorTema.addEventListener('change', function() {
+    temaSelect.addEventListener('change', function() {
+        const tema = temaSelect.value;
         document.body.classList.remove('tema-escuro', 'tema-azul');
-        const temaSelecionado = seletorTema.value;
-        if (temaSelecionado === 'escuro') {
+        if (tema === 'escuro') {
             document.body.classList.add('tema-escuro');
-        } else if (temaSelecionado === 'azul') {
+        } else if (tema === 'azul') {
             document.body.classList.add('tema-azul');
         }
-        registrarAcao(`Alteração de tema: ${temaSelecionado}`);
+        registrarAcao(`Alteração de tema: ${tema}`);
     });
 
-    controleFonte.addEventListener('input', function() {
-        const tamanhoFonte = controleFonte.value + 'px';
-        biografia.style.fontSize = tamanhoFonte;
-        valorFonte.textContent = tamanhoFonte;
-    });
+    function atualizarFonteBiografia() {
+        const tamanho = fonteRange.value + 'px';
+        biografiaPerfil.style.fontSize = tamanho;
+        valorFonte.textContent = tamanho;
+    }
 
-    controleFonte.addEventListener('change', function() {
-        registrarAcao(`Alteração de fonte: ${controleFonte.value}px`);
+    fonteRange.addEventListener('input', atualizarFonteBiografia);
+    fonteRange.addEventListener('change', function() {
+        registrarAcao(`Alteração de fonte: ${fonteRange.value}px`);
     });
+    atualizarFonteBiografia();
 
-    checkboxBiografia.addEventListener('change', function() {
-        if (checkboxBiografia.checked) {
-            biografia.style.display = 'block';
+    mostrarBio.addEventListener('change', function() {
+        if (mostrarBio.checked) {
+            biografiaPerfil.style.display = 'block';
             registrarAcao('Exibição da biografia');
         } else {
-            biografia.style.display = 'none';
+            biografiaPerfil.style.display = 'none';
             registrarAcao('Ocultação da biografia');
         }
     });
 
     btnAtualizarContato.addEventListener('click', function() {
-        const email = inputEmail.value.trim();
-        const telefone = inputTelefone.value.trim();
-
-        resumoEmail.textContent = email || 'Não informado';
-        resumoTelefone.textContent = telefone || 'Não informado';
-
+        const email = emailInput.value.trim();
+        const telefone = telefoneInput.value.trim();
+        emailExibido.textContent = email ? `E-mail: ${email}` : 'E-mail: não informado';
+        telefoneExibido.textContent = telefone ? `Telefone: ${telefone}` : 'Telefone: não informado';
         registrarAcao('Atualização de contato');
-        inputEmail.value = '';
-        inputTelefone.value = '';
+        emailInput.value = '';
+        telefoneInput.value = '';
     });
 
+    emailExibido.textContent = 'E-mail: não informado';
+    telefoneExibido.textContent = 'Telefone: não informado';
     contadorAcoes.textContent = '0';
     ultimaAcao.textContent = 'Nenhuma';
-
 });

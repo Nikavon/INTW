@@ -49,22 +49,35 @@ body {
     line-height: 1.6;
     padding: 30px;
     transition: var(--transicao-padrao);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     min-height: 100vh;
 }
 
-.container-principal {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    max-width: 1100px;
-    width: 100%;
-    margin-bottom: 30px;
+header {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-.cartao, .painel-contato, .painel-estatisticas, .area-acoes {
+header h1 {
+    color: var(--cor-primaria);
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: var(--cor-texto);
+    opacity: 0.8;
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+section {
     background-color: var(--cor-container);
     border-radius: var(--raio-borda);
     padding: 25px;
@@ -73,47 +86,38 @@ body {
     transition: var(--transicao-padrao);
 }
 
-h2, h3 {
-    color: var(--cor-primaria);
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid var(--cor-borda);
-    font-weight: 600;
-}
-
-.cartao-perfil {
-    grid-column: 1 / 2;
+#perfil {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
 
-.cartao-perfil img {
+#fotoPerfil {
     width: 150px;
     height: 150px;
     object-fit: cover;
     border-radius: 50%;
     border: 4px solid var(--cor-primaria);
-    margin-bottom: 15px;
+    margin: 15px 0;
     box-shadow: var(--sombra-media);
     transition: var(--transicao-padrao);
 }
 
-.cartao-perfil h2 {
-    border-bottom: none;
+#nomePerfil {
+    font-size: 1.8rem;
+    color: var(--cor-primaria);
     margin-bottom: 5px;
 }
 
-.cartao-perfil .curso {
+#cursoPerfil {
+    font-size: 1.2rem;
     color: var(--cor-secundaria);
     font-weight: 500;
     margin-bottom: 15px;
 }
 
-.biografia {
-    font-size: 1em;
-    margin-bottom: 20px;
+#biografiaPerfil {
     background-color: var(--cor-fundo);
     padding: 15px;
     border-radius: 8px;
@@ -121,173 +125,168 @@ h2, h3 {
     transition: var(--transicao-padrao);
 }
 
-.cartao-perfil.destaque {
+#perfil.destaque {
     border: 3px solid var(--cor-destaque);
     box-shadow: 0 0 25px rgba(231, 76, 60, 0.5);
     background-color: #fff9f0;
-    transform: scale(1.02);
+    transform: scale(1.01);
 }
 
-body.tema-escuro .cartao-perfil.destaque {
+body.tema-escuro #perfil.destaque {
     background-color: #2a1e30;
 }
 
-body.tema-azul .cartao-perfil.destaque {
+body.tema-azul #perfil.destaque {
     background-color: #fff5e6;
 }
 
-.paineis-direita {
-    grid-column: 2 / 3;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.grupo-preferencia {
+#preferencias div {
     margin-bottom: 15px;
 }
 
-.grupo-preferencia label {
-    display: block;
-    margin-bottom: 5px;
+#preferencias label {
+    display: inline-block;
+    min-width: 140px;
     font-weight: 500;
     color: var(--cor-primaria);
 }
 
-.grupo-preferencia select,
-.grupo-preferencia input[type="range"] {
-    width: 100%;
+#temaSelect, #fonteRange {
     padding: 8px;
     border-radius: 5px;
     border: 1px solid var(--cor-borda);
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
+    width: 200px;
 }
 
-.grupo-checkbox {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 15px;
+#valorFonte {
+    font-weight: bold;
+    color: var(--cor-secundaria);
+    margin-left: 10px;
 }
 
-.grupo-checkbox input[type="checkbox"] {
+#mostrarBio {
     width: 18px;
     height: 18px;
     cursor: pointer;
+    margin-right: 8px;
 }
 
-.valor-fonte {
-    font-weight: bold;
-    color: var(--cor-secundaria);
-    margin-left: 5px;
+#contato form div {
+    margin-bottom: 15px;
 }
 
-.campo-formulario {
-    margin-bottom: 12px;
-}
-
-.campo-formulario label {
-    display: block;
-    margin-bottom: 4px;
-    font-size: 0.9em;
+#contato label {
+    display: inline-block;
+    width: 70px;
     font-weight: 500;
     color: var(--cor-primaria);
 }
 
-.campo-formulario input {
-    width: 100%;
+#emailInput, #telefoneInput {
+    width: 250px;
     padding: 10px;
     border: 1px solid var(--cor-borda);
     border-radius: 6px;
-    font-size: 0.95em;
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
     transition: var(--transicao-padrao);
 }
 
-.campo-formulario input:focus {
+#emailInput:focus, #telefoneInput:focus {
     outline: none;
     border-color: var(--cor-secundaria);
     box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
 }
 
-.grupo-botoes, .area-acoes {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.botao {
-    padding: 10px 18px;
+button {
+    padding: 10px 20px;
     border: none;
     border-radius: 6px;
     background-color: var(--cor-secundaria);
     color: white;
     font-weight: 600;
-    font-size: 0.9em;
+    font-size: 0.9rem;
     cursor: pointer;
     transition: var(--transicao-padrao);
-    text-align: center;
-    flex-grow: 1;
+    margin-top: 5px;
 }
 
-.botao:hover {
+button:hover {
     opacity: 0.85;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.botao:active {
-    transform: translateY(0px);
-    box-shadow: none;
+button:active {
+    transform: translateY(0);
 }
 
-.botao.alterar {
+#btnAlterarNome, #btnAlterarCurso, #btnAlterarFoto {
     background-color: #3498db;
 }
 
-.botao.destacar {
+#btnDestacarPerfil {
     background-color: #f39c12;
 }
 
-.botao.restaurar {
+#btnRestaurar {
     background-color: #95a5a6;
 }
 
-.botao.atualizar {
+#btnAtualizarContato {
     background-color: #27ae60;
 }
 
-.painel-estatisticas p {
-    font-size: 1em;
-    margin-bottom: 8px;
+#acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
 }
 
-.painel-estatisticas span {
-    font-weight: 700;
+#acoes button {
+    flex: 1 0 auto;
+    min-width: 130px;
+}
+
+#estatisticas p {
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+#estatisticas strong {
     color: var(--cor-secundaria);
 }
 
-.area-acoes {
-    grid-column: 1 / -1;
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    color: var(--cor-texto);
+    opacity: 0.7;
 }
 
-.area-acoes h3 {
-    margin-bottom: 15px;
+hr {
+    display: none;
 }
 
 @media (max-width: 768px) {
-    .container-principal {
-        grid-template-columns: 1fr;
+    body {
+        padding: 15px;
     }
-    .cartao-perfil {
-        grid-column: 1 / -1;
+    #preferencias label {
+        display: block;
+        margin-bottom: 5px;
     }
-    .paineis-direita {
-        grid-column: 1 / -1;
+    #temaSelect, #fonteRange {
+        width: 100%;
     }
-    .area-acoes {
-        grid-column: 1 / -1;
+    #emailInput, #telefoneInput {
+        width: 100%;
+    }
+    #acoes button {
+        min-width: 100%;
     }
 }
