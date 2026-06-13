@@ -1,0 +1,42 @@
+:root {
+  --cor-primaria: #6E1A37;
+  --cor-secundaria: #72BAA9;
+  --cor-destaque: #AE2448;
+  --cor-sucesso: #2e7d32;
+  --cor-erro: #c62828;
+  --cor-texto: #2c2b28;
+  --cor-texto-claro: #ffffff;
+  --cor-fundo: #f5f3ef;
+  --cor-fundo-alt: #e8e0d5;
+
+  --fonte-base: 'Inter', 'Segoe UI', Arial, sans-serif;
+  --fonte-titulo: 'Playfair Display', Georgia, serif;
+
+  --texto-display: clamp(2rem, 5vw, 4rem);
+  --texto-h1: clamp(1.75rem, 4vw, 3rem);
+  --texto-h2: 1.75rem;
+  --texto-h3: 1.25rem;
+  --texto-base: 1rem;
+  --texto-sm: 0.875rem;
+  --texto-xs: 0.75rem;
+
+  --espaco-xs: 0.25rem;
+  --espaco-sm: 0.5rem;
+  --espaco-md: 1rem;
+  --espaco-lg: 2rem;
+  --espaco-xl: 4rem;
+
+  --raio-sm: 4px;
+  --raio-md: 8px;
+  --raio-lg: 16px;
+  --raio-circulo: 9999px;
+
+  --sombra-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+  --sombra-md: 0 4px 6px rgba(0, 0, 0, 0.10);
+  --sombra-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+  --transicao: 200ms ease-in-out;
+
+  --largura-max: 1200px;
+  --altura-nav: 70px;
+}

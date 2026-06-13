@@ -1,0 +1,258 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #D5E7B5;
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+header {
+  background: linear-gradient(135deg, #6E1A37 0%, #AE2448 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+}
+
+header a:hover {
+  text-decoration: underline;
+}
+
+section {
+  background: white;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+section h2 {
+  color: #6E1A37;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #72BAA9;
+  padding-bottom: 5px;
+}
+
+ul, ol {
+  padding-left: 25px;
+}
+
+li {
+  margin: 8px 0;
+}
+
+/* ============================================ */
+/* SEÇÃO 1: Seletores de atributo */
+/* ============================================ */
+
+#sec-atributo a[href^="https"] {
+  color: green;
+}
+
+#sec-atributo a[href^="http"]:not([href^="https"]) {
+  color: red;
+}
+
+#sec-atributo a[href^="http"]:not([href^="https"])::after {
+  content: " ⚠";
+  font-weight: bold;
+}
+
+#sec-atributo a[href$=".pdf"] {
+  color: orange;
+}
+
+#sec-atributo a[href$=".pdf"]::after {
+  content: " [PDF]";
+  font-weight: bold;
+}
+
+#sec-atributo a[href^="#"] {
+  color: gray;
+  font-style: italic;
+}
+
+#sec-atributo a[target="_blank"]::after {
+  content: " ↗";
+}
+
+/* ============================================ */
+/* SEÇÃO 2: Pseudo-classes estruturais */
+/* ============================================ */
+
+#sec-estrutural ol li:first-child {
+  font-weight: bold;
+}
+
+#sec-estrutural ol li:last-child {
+  color: #AE2448;
+}
+
+#sec-estrutural ol li:nth-child(even) {
+  background-color: #e8f0e0;
+}
+
+#sec-estrutural ol li:nth-child(odd) {
+  background-color: #f5f5f0;
+}
+
+#sec-estrutural ol li:nth-child(3) {
+  border-left: 4px solid #72BAA9;
+  padding-left: 10px;
+}
+
+/* ============================================ */
+/* SEÇÃO 3: Pseudo-classes de estado */
+/* ============================================ */
+
+#sec-estado form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 400px;
+}
+
+#sec-estado input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+#sec-estado input:focus {
+  outline: 3px solid #72BAA9;
+  outline-offset: 2px;
+  border-color: #6E1A37;
+}
+
+#sec-estado input:disabled {
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+#sec-estado input:required {
+  border-left: 4px solid #AE2448;
+  padding-left: 8px;
+}
+
+#sec-estado input:valid:not(:placeholder-shown) {
+  border-color: green;
+}
+
+#sec-estado input:invalid:not(:placeholder-shown) {
+  border-color: red;
+}
+
+#sec-estado input[type="checkbox"]:checked {
+  outline: none;
+}
+
+#sec-estado input[type="checkbox"]:checked + label {
+  font-weight: bold;
+}
+
+#sec-estado label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#sec-estado button {
+  background-color: #6E1A37;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+#sec-estado button:hover {
+  background-color: #72BAA9;
+  color: #6E1A37;
+}
+
+/* ============================================ */
+/* SEÇÃO 4: Pseudo-elementos */
+/* ============================================ */
+
+#sec-pseudoelemento .citacao::before {
+  content: '"';
+  font-size: 3rem;
+  color: #AE2448;
+  font-family: serif;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+#sec-pseudoelemento .citacao::after {
+  content: '"';
+  font-size: 3rem;
+  color: #AE2448;
+  font-family: serif;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+#sec-pseudoelemento .obrigatorio::after {
+  content: " *";
+  color: red;
+  font-weight: bold;
+}
+
+::selection {
+  background-color: #6E1A37;
+  color: #D5E7B5;
+}
+
+#sec-pseudoelemento .input-custom::placeholder {
+  color: #72BAA9;
+  font-style: italic;
+}
+
+/* ============================================ */
+/* SEÇÃO 5: Combinadores e :not() */
+/* ============================================ */
+
+#sec-combinadores h3 + p {
+  font-size: 1.1rem;
+  color: #AE2448;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#sec-combinadores li:not(.ativo) {
+  opacity: 0.5;
+}
+
+#sec-combinadores li.ativo {
+  font-weight: bold;
+}
+
+#sec-combinadores li.ativo::before {
+  content: "✔ ";
+  color: green;
+}
+
+#sec-combinadores ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 15px;
+}
+
+#sec-combinadores li {
+  padding: 5px 0;
+}

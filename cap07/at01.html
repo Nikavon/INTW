@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PWEB1 — Cap. 07 — AT01 — Cartão de Apresentação</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      background: linear-gradient(135deg, #D5E7B5 0%, #c2d8a0 100%);
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    header {
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      color: #6E1A37;
+      font-size: 1.8rem;
+    }
+
+    header a {
+      color: #6E1A37;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    header a:hover {
+      text-decoration: underline;
+    }
+
+    .cartao {
+      background: white;
+      border-radius: 24px;
+      padding: 2.5rem 2rem;
+      max-width: 450px;
+      margin: 0 auto;
+      box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .cartao:hover {
+      transform: translateY(-5px);
+    }
+
+    .cartao-nome {
+      font-size: 2.2rem;
+      color: #6E1A37;
+      margin-bottom: 0.25rem;
+      letter-spacing: -0.5px;
+    }
+
+    .cartao-divisor {
+      border: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #AE2448, #72BAA9, #AE2448, transparent);
+      width: 120px;
+      margin: 1.2rem auto;
+      border-radius: 3px;
+    }
+
+    .cartao-cargo {
+      font-style: italic;
+      color: #72BAA9;
+      font-size: 1.1rem;
+      margin: 0.75rem 0;
+      font-weight: 500;
+    }
+
+    .cartao-email {
+      font-size: 0.9rem;
+      color: #888;
+      margin-top: 0.75rem;
+      letter-spacing: 0.3px;
+    }
+
+    .cartao-email::before {
+      content: "✉ ";
+      color: #AE2448;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Cartão de Apresentação</h1>
+    <p><a href="../index.html">← Voltar para a página principal</a></p>
+  </header>
+
+  <main>
+    <article class="cartao">
+      <h1 class="cartao-nome">Anna Vitória Soares Queiroz Vasconcelos</h1>
+      <hr class="cartao-divisor" />
+      <p class="cartao-cargo">Estudante de Sistemas de Informação — IFAL</p>
+      <p class="cartao-email">avsqv1@aluno.ifal.edu.br</p>
+    </article>
+  </main>
+
+</body>
+</html>
