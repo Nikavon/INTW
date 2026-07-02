@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição - Escola Técnica</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-graduation-cap"></i> Formulário de Inscrição</h1>
+            <p>Preencha todos os campos obrigatórios para realizar sua inscrição</p>
+        </header>
+
+        <form id="formInscricao" novalidate>
+            <fieldset>
+                <legend>Dados Pessoais</legend>
+                
+                <div class="form-group">
+                    <label for="nome">Nome Completo *</label>
+                    <input type="text" id="nome" name="nome" 
+                           placeholder="Digite seu nome completo"
+                           required minlength="3" maxlength="100">
+                    <span class="error-message" id="nome-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail *</label>
+                    <input type="email" id="email" name="email" 
+                           placeholder="seu@email.com"
+                           required>
+                    <span class="error-message" id="email-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefone">Telefone *</label>
+                    <input type="tel" id="telefone" name="telefone" 
+                           placeholder="(82) 99999-9999"
+                           required>
+                    <span class="error-message" id="telefone-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="nascimento">Data de Nascimento *</label>
+                    <input type="date" id="nascimento" name="nascimento" required>
+                    <span class="error-message" id="nascimento-error"></span>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Curso e Turno</legend>
+                
+                <div class="form-group">
+                    <label for="curso">Curso *</label>
+                    <select id="curso" name="curso" required>
+                        <option value="">Selecione um curso</option>
+                        <option value="informatica">Informática</option>
+                        <option value="eletronica">Eletrônica</option>
+                        <option value="mecanica">Mecânica</option>
+                        <option value="administracao">Administração</option>
+                        <option value="enfermagem">Enfermagem</option>
+                    </select>
+                    <span class="error-message" id="curso-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Turno *</label>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="turno" value="manha" required>
+                            Manhã
+                        </label>
+                        <label>
+                            <input type="radio" name="turno" value="tarde">
+                            Tarde
+                        </label>
+                        <label>
+                            <input type="radio" name="turno" value="noite">
+                            Noite
+                        </label>
+                    </div>
+                    <span class="error-message" id="turno-error"></span>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Áreas de Interesse</legend>
+                <p class="helper-text">Selecione pelo menos 2 áreas</p>
+                
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" name="interesses" value="programacao">
+                        Programação
+                    </label>
+                    <label>
+                        <input type="checkbox" name="interesses" value="design">
+                        Design
+                    </label>
+                    <label>
+                        <input type="checkbox" name="interesses" value="redes">
+                        Redes
+                    </label>
+                    <label>
+                        <input type="checkbox" name="interesses" value="banco-dados">
+                        Banco de Dados
+                    </label>
+                    <label>
+                        <input type="checkbox" name="interesses" value="seguranca">
+                        Segurança da Informação
+                    </label>
+                    <label>
+                        <input type="checkbox" name="interesses" value="ia">
+                        Inteligência Artificial
+                    </label>
+                </div>
+                <span class="error-message" id="interesses-error"></span>
+            </fieldset>
+
+            <fieldset>
+                <legend>Senha</legend>
+                
+                <div class="form-group">
+                    <label for="senha">Senha *</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="senha" name="senha" 
+                               placeholder="Mínimo 8 caracteres"
+                               required minlength="8">
+                        <button type="button" class="toggle-password" data-target="senha">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="password-strength">
+                        <div class="strength-bar"></div>
+                        <span class="strength-text"></span>
+                    </div>
+                    <span class="error-message" id="senha-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmar-senha">Confirmar Senha *</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="confirmar-senha" name="confirmar-senha" 
+                               placeholder="Digite a senha novamente"
+                               required>
+                        <button type="button" class="toggle-password" data-target="confirmar-senha">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <span class="error-message" id="confirmar-senha-error"></span>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Informações Adicionais</legend>
+                
+                <div class="form-group">
+                    <label for="foto">Foto (Opcional)</label>
+                    <input type="file" id="foto" name="foto" 
+                           accept=".jpg,.jpeg,.png">
+                    <div id="foto-preview"></div>
+                    <span class="error-message" id="foto-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensagem">Mensagem *</label>
+                    <textarea id="mensagem" name="mensagem" 
+                              placeholder="Digite sua mensagem aqui..."
+                              required minlength="50" maxlength="500"></textarea>
+                    <div class="character-counter">
+                        <span id="caracteres-atual">0</span> / <span id="caracteres-maximo">500</span> caracteres
+                    </div>
+                    <span class="error-message" id="mensagem-error"></span>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Termos e Condições</legend>
+                
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="termos" name="termos" required>
+                        Li e aceito os <a href="#" id="abrir-termos">termos e condições</a> *
+                    </label>
+                    <span class="error-message" id="termos-error"></span>
+                </div>
+            </fieldset>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-submit">
+                    <i class="fas fa-paper-plane"></i> Enviar Inscrição
+                </button>
+                <button type="reset" class="btn-reset">
+                    <i class="fas fa-undo"></i> Limpar
+                </button>
+            </div>
+        </form>
+
+        <div id="modal-termos" class="modal">
+            <div class="modal-content">
+                <span class="modal-close">&times;</span>
+                <h2>Termos e Condições</h2>
+                <div class="modal-body">
+                    <p>1. O candidato declara que todas as informações fornecidas são verdadeiras.</p>
+                    <p>2. A escola técnica se reserva o direito de verificar as informações fornecidas.</p>
+                    <p>3. O candidato concorda em cumprir as regras e regulamentos da instituição.</p>
+                    <p>4. Os dados pessoais serão utilizados exclusivamente para fins acadêmicos.</p>
+                    <p>5. A inscrição não garante vaga, estando sujeita à análise e disponibilidade.</p>
+                </div>
+                <button class="btn-modal-confirm">Li e Concordo</button>
+            </div>
+        </div>
+
+        <div id="modal-sucesso" class="modal">
+            <div class="modal-content success-modal">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Inscrição Realizada com Sucesso!</h2>
+                <p>Sua inscrição foi enviada e está sendo processada.</p>
+                <p>Em breve você receberá um e-mail de confirmação.</p>
+                <button class="btn-modal-close">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/util.js"></script>
+    <script src="js/validacoes.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
