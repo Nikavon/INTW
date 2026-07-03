@@ -43,16 +43,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function aplicarEstilo(elemento, valido) {
-        if (elemento && elemento.value && elemento.value.length > 0) {
-            if (valido) {
-                elemento.classList.remove('invalid');
-                elemento.classList.add('valid');
+        if (elemento) {
+            if (elemento.value && elemento.value.length > 0) {
+                if (valido) {
+                    elemento.classList.remove('invalid');
+                    elemento.classList.add('valid');
+                } else {
+                    elemento.classList.remove('valid');
+                    elemento.classList.add('invalid');
+                }
             } else {
-                elemento.classList.remove('valid');
-                elemento.classList.add('invalid');
+                elemento.classList.remove('valid', 'invalid');
             }
-        } else {
-            elemento.classList.remove('valid', 'invalid');
         }
     }
 
@@ -72,16 +74,38 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    function validarCampo(campo, validacaoFn, nomeCampo) {
-        let valor = campo.value;
-        if (campo.type === 'checkbox') {
-            valor = campo.checked;
-        }
-        const resultado = validacaoFn(valor);
-        mostrarErro(nomeCampo, resultado.erros.join(' '));
-        if (campo.type !== 'checkbox' && campo.type !== 'radio') {
-            aplicarEstilo(campo, resultado.valido);
-        }
+    function validarNome() {
+        const resultado = Validacoes.validarNome(campos.nome.value);
+        mostrarErro('nome', resultado.erros.join(' '));
+        aplicarEstilo(campos.nome, resultado.valido);
+        return resultado.valido;
+    }
+
+    function validarEmail() {
+        const resultado = Validacoes.validarEmail(campos.email.value);
+        mostrarErro('email', resultado.erros.join(' '));
+        aplicarEstilo(campos.email, resultado.valido);
+        return resultado.valido;
+    }
+
+    function validarTelefone() {
+        const resultado = Validacoes.validarTelefone(campos.telefone.value);
+        mostrarErro('telefone', resultado.erros.join(' '));
+        aplicarEstilo(campos.telefone, resultado.valido);
+        return resultado.valido;
+    }
+
+    function validarNascimento() {
+        const resultado = Validacoes.validarNascimento(campos.nascimento.value);
+        mostrarErro('nascimento', resultado.erros.join(' '));
+        aplicarEstilo(campos.nascimento, resultado.valido);
+        return resultado.valido;
+    }
+
+    function validarCurso() {
+        const resultado = Validacoes.validarCurso(campos.curso.value);
+        mostrarErro('curso', resultado.erros.join(' '));
+        aplicarEstilo(campos.curso, resultado.valido);
         return resultado.valido;
     }
 
@@ -99,6 +123,14 @@ document.addEventListener('DOMContentLoaded', function() {
         return resultado.valido;
     }
 
+    function validarSenha() {
+        const resultado = Validacoes.validarSenha(campos.senha.value);
+        mostrarErro('senha', resultado.erros.join(' '));
+        aplicarEstilo(campos.senha, resultado.valido);
+        atualizarForcaSenha();
+        return resultado.valido;
+    }
+
     function validarConfirmarSenha() {
         const resultado = Validacoes.validarConfirmarSenha(
             campos.senha.value,
@@ -107,6 +139,47 @@ document.addEventListener('DOMContentLoaded', function() {
         mostrarErro('confirmarSenha', resultado.erros.join(' '));
         aplicarEstilo(campos.confirmarSenha, resultado.valido);
         return resultado.valido;
+    }
+
+    function validarMensagem() {
+        const resultado = Validacoes.validarMensagem(campos.mensagem.value);
+        mostrarErro('mensagem', resultado.erros.join(' '));
+        aplicarEstilo(campos.mensagem, resultado.valido);
+        return resultado.valido;
+    }
+
+    function validarFoto() {
+        const file = campos.foto.files[0];
+        const resultado = Validacoes.validarFoto(file);
+        mostrarErro('foto', resultado.erros.join(' '));
+        return resultado.valido;
+    }
+
+    function validarTermos() {
+        const resultado = Validacoes.validarTermos(campos.termos.checked);
+        mostrarErro('termos', resultado.erros.join(' '));
+        return resultado.valido;
+    }
+
+    function validarTodosCampos() {
+        const validacoes = [
+            validarNome(),
+            validarEmail(),
+            validarTelefone(),
+            validarNascimento(),
+            validarCurso(),
+            validarTurno(),
+            validarInteresses(),
+            validarSenha(),
+            validarConfirmarSenha(),
+            validarMensagem(),
+            validarFoto(),
+            validarTermos()
+        ];
+        
+        return validacoes.every(function(valido) {
+            return valido === true;
+        });
     }
 
     function atualizarForcaSenha() {
@@ -219,29 +292,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     campos.telefone.addEventListener('input', function() {
         mascaraTelefone(this);
-        const resultado = Validacoes.validarTelefone(this.value);
-        mostrarErro('telefone', resultado.erros.join(' '));
-        aplicarEstilo(this, resultado.valido);
+        validarTelefone();
     });
 
     campos.nome.addEventListener('input', function() {
-        const resultado = Validacoes.validarNome(this.value);
-        mostrarErro('nome', resultado.erros.join(' '));
-        aplicarEstilo(this, resultado.valido);
+        validarNome();
     });
     
     campos.email.addEventListener('input', function() {
-        const resultado = Validacoes.validarEmail(this.value);
-        mostrarErro('email', resultado.erros.join(' '));
-        aplicarEstilo(this, resultado.valido);
+        validarEmail();
     });
     
     campos.senha.addEventListener('input', function() {
-        const resultado = Validacoes.validarSenha(this.value);
-        mostrarErro('senha', resultado.erros.join(' '));
-        aplicarEstilo(this, resultado.valido);
-        atualizarForcaSenha();
-        
+        validarSenha();
         if (campos.confirmarSenha.value.length > 0) {
             validarConfirmarSenha();
         }
@@ -252,15 +315,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     campos.nascimento.addEventListener('change', function() {
-        const resultado = Validacoes.validarNascimento(this.value);
-        mostrarErro('nascimento', resultado.erros.join(' '));
-        aplicarEstilo(this, resultado.valido);
+        validarNascimento();
+    });
+
+    campos.nascimento.addEventListener('input', function() {
+        validarNascimento();
     });
 
     campos.curso.addEventListener('change', function() {
-        const resultado = Validacoes.validarCurso(this.value);
-        mostrarErro('curso', resultado.erros.join(' '));
-        aplicarEstilo(this, resultado.valido);
+        validarCurso();
     });
 
     campos.turnos.forEach(function(radio) {
@@ -276,22 +339,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     campos.mensagem.addEventListener('input', function() {
-        const resultado = Validacoes.validarMensagem(this.value);
-        mostrarErro('mensagem', resultado.erros.join(' '));
-        aplicarEstilo(this, resultado.valido);
+        validarMensagem();
         atualizarContador(this, contadorAtual, contadorMaximo);
     });
 
     campos.foto.addEventListener('change', function() {
-        const file = this.files[0];
-        const resultado = Validacoes.validarFoto(file);
-        mostrarErro('foto', resultado.erros.join(' '));
+        validarFoto();
         atualizarPreviewFoto();
     });
 
     campos.termos.addEventListener('change', function() {
-        const resultado = Validacoes.validarTermos(this.checked);
-        mostrarErro('termos', resultado.erros.join(' '));
+        validarTermos();
     });
 
     document.querySelectorAll('.toggle-password').forEach(function(button) {
@@ -325,8 +383,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelector('.btn-modal-confirm').addEventListener('click', function() {
         campos.termos.checked = true;
-        const resultado = Validacoes.validarTermos(true);
-        mostrarErro('termos', resultado.erros.join(' '));
+        validarTermos();
         fecharModalTermos();
     });
 
@@ -347,34 +404,12 @@ document.addEventListener('DOMContentLoaded', function() {
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        const turno = obterTurnoSelecionado();
-        const interesses = obterInteressesSelecionados();
+        const valido = validarTodosCampos();
         
-        const dados = {
-            nome: campos.nome.value,
-            email: campos.email.value,
-            telefone: campos.telefone.value,
-            nascimento: campos.nascimento.value,
-            curso: campos.curso.value,
-            turno: turno,
-            interesses: interesses,
-            senha: campos.senha.value,
-            confirmarSenha: campos.confirmarSenha.value,
-            foto: campos.foto.files[0],
-            mensagem: campos.mensagem.value,
-            termos: campos.termos.checked
-        };
-        
-        const resultado = Validacoes.validarFormulario(dados);
-        
-        if (resultado.valido) {
+        if (valido) {
             salvarDados();
             abrirModalSucesso();
         } else {
-            for (const [campo, erros] of Object.entries(resultado.erros)) {
-                mostrarErro(campo, erros.join(' '));
-            }
-            
             const primeiroErro = document.querySelector('.error-message:not(:empty)');
             if (primeiroErro) {
                 const campoPai = primeiroErro.closest('.form-group');
